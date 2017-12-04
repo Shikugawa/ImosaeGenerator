@@ -2,12 +2,14 @@ require 'sinatra'
 require 'sinatra/reloader'
 require 'rmagick'
 
+set :public, File.dirname(__FILE__) + '/public'
+
 def split_str str
   str.split('')      
 end
 
 def draw_logo draw, img, x, y, base_x, base_y, text
-  font_path = '/Library/Fonts/NotoSansCJKjp-Black.otf'
+  font_path = './fonts/NotoSansCJKjp-Black.otf'
   font_color = 'white'
   font_pointsize = 70
 
@@ -59,6 +61,7 @@ post '/draw' do
     draw_logo(draw, @img, 0, 0, base_x - 110, base_y + index * power + size, t)
   end
 
-  @img.write('sample.jpg')
+  @img.write('public/logos/sample.jpg')
+
   erb :index
 end
