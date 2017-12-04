@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <title>いもさえ次回予告風ロゴジェネレーター</title>
+	  <meta name="viewport" content="width=device-width, initial-scale=1">      
+	  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>             
+  </head>
+  <body>
+      <div class="card-panel teal lighten-2">
+        <span class="white-text"><h3>いもさえ次回予告風ロゴジェネレーター</h3></span>
+      </div>
+      <div class="main" style="margin-left: 30px; margin-right: 30px">
+        <p>入力してね</p>
+        <form action="draw" method="post">
+          <div class="input-field">
+            <input name="text0" type="text" class="validate">
+          </div>
+
+          <div class="input-field">
+            <input name="text1" type="text" class="validate">
+          </div>
+
+          <div class="input-field">
+            <input name="text2" type="text" class="validate">
+          </div>
+
+          <button class="btn waves-effect waves-light" type="submit" name="action">探す
+            <i class="material-icons right">send</i>
+          </button>
+        </form>
+
+        <img src="sample.jpg">
+        <% unless @img.nil? %>
+          <p>結果</p>
+          <img src="views/logo.jpg">
+        <% end %>
+      </div>
+   </body>
+</html>
