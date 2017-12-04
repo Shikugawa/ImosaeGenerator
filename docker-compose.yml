@@ -1,0 +1,19 @@
+version: '2'
+services:
+  #   nginx:
+  # build:
+  #   context: ./docker/nginx
+  # command: "nginx -g 'daemon off;'"
+  # ports:
+  #   - '15000:80'      
+  # links:
+  #   - web
+   web:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    command: "bundle exec puma -p 15000"
+    volumes:
+      - .:/myapp
+    ports:
+      - "15000:15000"
