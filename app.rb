@@ -35,7 +35,7 @@ post '/draw' do
   power = 70
 
   @img = Magick::Image.new(1200, 700) do 
-    self.background_color = '#D2691E'
+    self.background_color = params[:color]
   end
 
   @img.format = 'jpg'
