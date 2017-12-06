@@ -39,8 +39,10 @@
         </form>
 
         <div class="result-field">
-          <p>結果</p>
-          <img src="sample.jpg" alt="imosae-logo">
+          <% unless @img.nil? %>
+            <p>結果</p>
+            <img src="logos/sample.jpg" alt="imosae-logo">
+          <% end %>
         </div>
       </div>
    </body>
